@@ -1,3 +1,6 @@
+
+![](https://circleci.com/gh/daamien/check_pgactivity/tree/circleci.png?style=shield&circle-token=c58dc1837c0c934aac4b02bafdaf7c6d1461a386)
+
 check_pgactivity
     check_pgactivity - PostgreSQL plugin for Nagios
 
