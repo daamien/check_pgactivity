@@ -14,7 +14,7 @@ latest: 9.6
 8.4: 8.3
 8.3: 8.2 
 8.2: 8.1 last_vacuum last_analyze
-8.1: 8.0
+8.1: 8.0 autovacuum
 8.0: 7.4
 7.4: all
 
@@ -22,9 +22,10 @@ all: archive_folder
 
 
 archive_folder:
-	$C -s archive_folder --path /var/lib/postgres/pg_xlog
+#	$C -s archive_folder --path /var/lib/postgres/pg_xlog
 
-
+autovacuum:
+	$C -s autovacuum
 
 last_analyze:
 	$C -s last_vacuum --status-file `mktemp` -h localhost -w 30m -c 1h30m
