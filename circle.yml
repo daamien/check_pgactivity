@@ -2,6 +2,7 @@ machine:
   services:
     - postgresql
 
+
 test:
   post:
     - sudo -u postgres check_pgactivity --list 
