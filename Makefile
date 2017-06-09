@@ -25,7 +25,7 @@ archive_folder:
 #	$C -s archive_folder --path /var/lib/postgres/pg_xlog
 
 autovacuum:
-	$C -s autovacuum
+	$C -s autovacuum -h localhost
 
 last_analyze:
 	$C -s last_vacuum --status-file `mktemp` -h localhost -w 30m -c 1h30m
