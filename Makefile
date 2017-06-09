@@ -1,5 +1,5 @@
 
-C=./check_pgactivity --path /tmp/ --status-file /tmp/
+C=./check_pgactivity --path /tmp/ --status-file /tmp/foo
 
 test: 9.6
 
