@@ -5,4 +5,4 @@ machine:
 
 test:
   post:
-    - sudo -u postgres check_pgactivity --list 
+    - sudo -u postgres ./check_pgactivity --list 
