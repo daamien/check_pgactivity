@@ -6,8 +6,8 @@ machine:
 test:
   post:
     - sudo -u postgres ./check_pgactivity --list
-    - sudo -u postgres ./check_pgactivity --path /tmp/ -s last_vacuum -w 30m -c 1h30m 
-    - sudo -u postgres ./check_pgactivity --service hot_standby_delta -w 32MB -c 160MB
-    - sudo -u postgres ./check_pgactivity --service streaming_delta -w 32MB -c 160MB
-    - sudo -u postgres ./check_pgactivity --service hit_ratio --dbexclude idelone --dbexclude "(?i:sleep)" -w 90% -c 80%
-    - sudo -u postgres ./check_pgactivity -h localhost --service hit_ratio --dbinclude importantone -w 90% -c 80% 
+    - sudo -u postgres ./check_pgactivity --path /tmp/ -h localhost -s last_vacuum -w 30m -c 1h30m 
+#    - sudo -u postgres ./check_pgactivity --service hot_standby_delta -w 32MB -c 160MB
+#    - sudo -u postgres ./check_pgactivity --service streaming_delta -w 32MB -c 160MB
+#    - sudo -u postgres ./check_pgactivity --service hit_ratio --dbexclude idelone --dbexclude "(?i:sleep)" -w 90% -c 80%
+#    - sudo -u postgres ./check_pgactivity -h localhost --service hit_ratio --dbinclude importantone -w 90% -c 80% 
