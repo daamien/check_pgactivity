@@ -11,3 +11,6 @@ jobs:
       - run:
           name: 'list'
           command: './check_pgactivity --list'
+      - run:
+           name: 'make'
+           command: 'make test'
