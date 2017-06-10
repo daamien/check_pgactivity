@@ -3,11 +3,9 @@ sudo: required
 services:
   - docker
 
-before_install:
-#- docker pull carlad/sinatra
-#- docker run -d -p 127.0.0.1:80:4567 carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec foreman start;"
-#- docker ps -a
-#- docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
-
 script:
+- PG_VERSION=9.2 make test
+- PG_VERSION=9.3 make test
+- PG_VERSION=9.4 make test
+- PG_VERSION=9.5 make test
 - PG_VERSION=9.6 make test 
