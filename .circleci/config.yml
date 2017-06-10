@@ -2,6 +2,14 @@ version: 2
 jobs:
 
   build:
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: 'list'
+          command: './check_pgactivity --list'
+
+  test9.4:
     working_directory: ~/check_pgactivity
     docker:
       - image: circleci/postgres:9.4
