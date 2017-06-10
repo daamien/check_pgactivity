@@ -30,7 +30,7 @@ autovacuum:
 	$C -s autovacuum -h $(HOST)
 
 backends:
-	$C -s backends -h $(HOST) -w 'waiting=5,idle_xact=10' -c 'waiting=20,idle_xact=30'
+	$C -s backends -h $(HOST) -w '10%' -c '30%'
 
 backends_status:
 	$C -s backends_status -h $(HOST) -w 'waiting=5,idle_xact=10' -c 'waiting=20,idle_xact=30'
