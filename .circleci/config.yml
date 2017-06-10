@@ -1,0 +1,12 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~
+    docker:
+      - image: postgresql:9.5
+      - image: postgresql:9.6
+    steps:
+      - checkout
+      - run:
+	  name: 'psql'
+          command: 'gosu postgres psql'
