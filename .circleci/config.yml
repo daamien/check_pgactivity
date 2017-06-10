@@ -3,9 +3,9 @@ jobs:
   build:
     working_directory: /
     docker:
-      - image: postgresql:9.4
-      - image: postgresql:9.5
-      - image: postgresql:9.6
+      - image: circleci/postgres:9.4
+      - image: circleci/postgres:9.5
+      - image: circleci/postgres:9.6
     steps:
       - checkout
       - run:
