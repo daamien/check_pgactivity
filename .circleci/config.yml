@@ -9,5 +9,5 @@ jobs:
     steps:
       - checkout
       - run:
-	  name: 'psql'
+          name: 'psql'
           command: 'gosu postgres psql'
