@@ -5,4 +5,4 @@ machine:
 
 test:
   post:
-    - sudo -u postgres make test
+    - PG_VERSION=9.3 make test

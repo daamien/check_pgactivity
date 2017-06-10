@@ -3,11 +3,17 @@ HOST=localhost
 STATUS_FILE=/tmp/check_pgactivity.data
 C=@./check_pgactivity 
 
-test: latest
+CONTAINER=efhzeiginiefe_$(PG_VERSION)
 
-latest: 9.6
-9.6: 9.5 
-9.5: 9.4
+test:
+	docker run -d --name $(CONTAINER) postgres:$(PG_VERSION)
+	docker cp . $(CONTAINER):/tmp/
+	# wait for the database to come up
+	sleep 10
+	docker exec $(CONTAINER) /tmp/test.sh $(PG_VERSION)
+	docker rm -f $(CONTAINER)
+
+
 9.4: 9.3
 9.3: 9.2
 9.2: 9.1

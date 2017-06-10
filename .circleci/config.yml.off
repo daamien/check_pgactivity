@@ -2,6 +2,7 @@ version: 2
 jobs:
 
   build:
+    working_directory: ~/check_pgactivity
     machine: true
     steps:
       - checkout
