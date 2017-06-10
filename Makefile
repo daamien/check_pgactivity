@@ -28,9 +28,9 @@ autovacuum:
 	$C -s autovacuum -h localhost
 
 last_analyze:
-	$C -s last_vacuum --status-file `mktemp` -h localhost -w 30m -c 1h30m
+	$C -s last_vacuum --status-file /tmp/check_pgactivity.data -h localhost -w 30m -c 1h30m
 
 last_vacuum:
-	$C -s last_vacuum --status-file `mktemp` -h localhost -w 30m -c 1h30m
+	$C -s last_vacuum --status-file /tmp/check_pgactivity.data  -h localhost -w 30m -c 1h30m
 
  
