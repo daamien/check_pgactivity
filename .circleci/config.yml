@@ -1,11 +1,23 @@
 version: 2
 jobs:
-  build:
+
+  test9.4:
     working_directory: ~/check_pgactivity
     docker:
       - image: circleci/postgres:9.4
-#      - image: circleci/postgres:9.5
-      - image: circleci/postgres:9.6
+    steps:
+      - checkout
+      - run:
+          name: 'list'
+          command: './check_pgactivity --list'
+      - run:
+           name: 'make'
+           command: './check_pgactivity -s autovacuum -h localhost'
+
+  test9.5:
+    working_directory: ~/check_pgactivity
+    docker:
+      - image: circleci/postgres:9.5
     steps:
       - checkout
       - run:
@@ -14,3 +26,16 @@ jobs:
       - run:
            name: 'make'
            command: 'make test'
+
+  test9.6:
+    working_directory: ~/check_pgactivity
+    docker:
+      - image: circleci/postgres:9.6
+    steps:
+      - checkout
+      - run:
+          name: 'list'
+          command: './check_pgactivity --list'
+      - run:
+           name: 'make'
+           command: './check_pgactivity -s autovacuum -h localhost'
