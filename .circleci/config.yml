@@ -3,6 +3,7 @@ jobs:
   build:
     working_directory: ~
     docker:
+      - image: postgresql:9.4
       - image: postgresql:9.5
       - image: postgresql:9.6
     steps:
