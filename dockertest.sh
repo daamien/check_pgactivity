@@ -23,7 +23,9 @@ sleep 10
 	
 # launch test
 docker exec $CONTAINER bash -x /tmp/test.sh $PG_VERSION
+rc=$?
 
 # clean up	
 docker rm -f $CONTAINER
 
+exit $rc
