@@ -13,7 +13,7 @@ fi
 
 CONTAINER=test_check_pgactivity_$PG_VERSION
 
-docker run -d --name $CONTAINER postgres:$PG_VERSION
+docker run -d --name $CONTAINER postgres:$PG_VERSION > /dev/null
 
 # load test into the 
 docker cp . $CONTAINER:/tmp/
@@ -26,6 +26,6 @@ docker exec $CONTAINER bash -x /tmp/test.sh $PG_VERSION
 rc=$?
 
 # clean up	
-docker rm -f $CONTAINER
+docker rm -f $CONTAINER > /dev/null
 
 exit $rc
