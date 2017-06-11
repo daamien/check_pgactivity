@@ -4,8 +4,8 @@ services:
   - docker
 
 script:
-- PG_VERSION=9.2 make test
-- PG_VERSION=9.3 make test
-- PG_VERSION=9.4 make test
-- PG_VERSION=9.5 make test
-- PG_VERSION=9.6 make test 
+- ./dockertest.sh 9.2
+- ./dockertest.sh 9.3
+- ./dockertest.sh 9.4
+- ./dockertest.sh 9.5
+- ./dockertest.sh 9.6
